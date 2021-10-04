@@ -1,0 +1,17 @@
+.header {
+  background-color: lightblue;
+  display: grid;
+  grid-area: A;
+  height: 20vh;
+  &_title {
+    display: flex;
+    align-items: center;
+    &-logo {
+      width: 100px;
+      margin-right: 30px;
+    }
+    &-text {
+      font-size: 40px;
+    }
+  }
+}

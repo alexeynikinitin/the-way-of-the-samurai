@@ -1,0 +1,37 @@
+// Страница сообщений пользователя ==============================
+.messages {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+}
+
+// Список Юзеров по переписке ==============================
+.users {
+  padding: 40px;
+  border-right: 2px solid black;
+}
+
+// Сообщения конкретного Юзера ==============================
+.users_messages {
+  padding: 40px;
+}
+
+
+// Блок отправки сообщения ==============================
+.new_message {
+  margin-top: 60px;
+}
+
+.lable {
+  font-size: 15px;
+}
+
+.textarea {
+  width: 400px;
+  height: 100px;
+}
+
+.btn {
+  display: block;
+  height: 40px;
+  width: 120px;
+}

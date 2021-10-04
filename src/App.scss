@@ -1,0 +1,23 @@
+@import "components/Header/Header.module";
+@import "components/NavBar/NavBar.module";
+@import "components/Content/Profile/Profile.module";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "A A A A   A A A A   A A A A"
+    "B B C C   C C C C   C C C C";
+
+  &_content {
+    background-color: lightblue;
+    display: grid;
+    grid-area: C;
+  }
+}

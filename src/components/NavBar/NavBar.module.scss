@@ -1,0 +1,21 @@
+.navBar {
+  background-color: lightblue;
+  display: grid;
+  align-content: start;
+  grid-area: B;
+  height: 80vh;
+}
+
+.menu {
+  font-size: 25px;
+  margin: 5px 0 5px 10px;
+}
+
+.item {
+  color: black;
+  text-decoration: none;
+}
+
+.active {
+  color: blue;
+}

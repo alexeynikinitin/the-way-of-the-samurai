@@ -1,0 +1,27 @@
+.item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.user_item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  img {
+    width: 60px;
+    margin: 20px 40px;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+.active {
+  color: red;
+}
+
