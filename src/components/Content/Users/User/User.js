@@ -1,19 +1,23 @@
 import React from "react";
 import classes from "./User.module.scss"
-import {NavLink} from "react-router-dom";
 
 let User = (props) => {
   return (
-    <div>
-      <div className={classes.item}>
-        <NavLink className={classes.user_item} to={"/users/" + props.id} activeClassName={classes.active}>
-          <img src={props.ava} alt={"ava_user" + props.id} />
-          <p>
-            {props.name}
-          </p>
-        </NavLink>
+    <div className={classes.user}>
+      <div className={classes.photo_btn}>
+        <div className={classes.photoBox}>
+          <img className={classes.photo} src={props.photo} alt="photo"/>
+        </div>
+        <button className={classes.btn}>{props.followed}</button>
       </div>
-
+      <div className={classes.name_message}>
+        <p className={classes.name}>{props.name}</p>
+        <p className={classes.message}>{props.message}</p>
+      </div>
+      <div className={classes.country_city}>
+        <p className={classes.country}>{props.country}</p>
+        <p className={classes.city}>{props.city}</p>
+      </div>
     </div>
   );
 };

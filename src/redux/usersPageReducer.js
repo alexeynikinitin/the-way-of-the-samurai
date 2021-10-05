@@ -6,7 +6,7 @@ let initialize = {
     {
     id: 0,
     followed: 'follow',
-    photo: 'https://get.pxhere.com/photo/man-person-girl-woman-camera-photography-dslr-portrait-spring-red-lens-color-autumn-canon-romance-season-taking-photo-photograph-beauty-emotion-photo-shoot-portrait-photography-939435.jpg',
+    photo: 'https://avatars.mds.yandex.net/get-pdb/1004345/f795977b-4fde-4176-a87f-4f0acba543e8/s1200?webp=false',
     name: 'Dmitry',
     message: 'Hello, i`m Dmitry',
     location: {
@@ -17,7 +17,7 @@ let initialize = {
     {
       id: 1,
       followed: 'unfollow',
-      photo: 'https://get.pxhere.com/photo/man-person-girl-woman-camera-photography-dslr-portrait-spring-red-lens-color-autumn-canon-romance-season-taking-photo-photograph-beauty-emotion-photo-shoot-portrait-photography-939435.jpg',
+      photo: 'https://avatars.mds.yandex.net/get-pdb/1004345/f795977b-4fde-4176-a87f-4f0acba543e8/s1200?webp=false',
       name: 'Sasha',
       message: 'Hello, i`m Sasha',
       location: {
@@ -28,7 +28,7 @@ let initialize = {
     {
       id: 2,
       followed: 'follow',
-      photo: 'https://get.pxhere.com/photo/man-person-girl-woman-camera-photography-dslr-portrait-spring-red-lens-color-autumn-canon-romance-season-taking-photo-photograph-beauty-emotion-photo-shoot-portrait-photography-939435.jpg',
+      photo: 'https://avatars.mds.yandex.net/get-pdb/1004345/f795977b-4fde-4176-a87f-4f0acba543e8/s1200?webp=false',
       name: 'Andrew',
       message: 'Hello, i`m Andrew',
       location: {
