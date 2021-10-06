@@ -11,11 +11,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    follow: (userId) => dispatch(unfollowAC(userId)),
-    unfollow: (userId) => dispatch(followAC(userId))
+    followw: (userId) => dispatch(followAC(userId)),
+    unfollow: (userId) => dispatch(unfollowAC(userId))
   }
 }
 
-let FindUsersContainer = connect(mapStateToProps, mapDispatchToProps)(FindUsers);
+let UsersContainer = connect(mapStateToProps, mapDispatchToProps)(FindUsers);
 
-export default FindUsersContainer;
+export default UsersContainer;

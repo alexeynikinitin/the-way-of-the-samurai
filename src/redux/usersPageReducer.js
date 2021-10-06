@@ -4,19 +4,19 @@ const UNFOLLOW = "UNFOLLOW";
 let initialize = {
   users: [
     {
-    id: 0,
-    followed: 'follow',
-    photo: 'https://avatars.mds.yandex.net/get-pdb/1004345/f795977b-4fde-4176-a87f-4f0acba543e8/s1200?webp=false',
-    name: 'Dmitry',
-    message: 'Hello, i`m Dmitry',
-    location: {
-      country: 'Belarus',
-      city: 'Minsk'
-    }
-  },
+      id: 0,
+      followed: true,
+      photo: 'https://avatars.mds.yandex.net/get-pdb/1004345/f795977b-4fde-4176-a87f-4f0acba543e8/s1200?webp=false',
+      name: 'Dmitry',
+      message: 'Hello, i`m Dmitry',
+      location: {
+        country: 'Belarus',
+        city: 'Minsk'
+      }
+    },
     {
       id: 1,
-      followed: 'unfollow',
+      followed: false,
       photo: 'https://avatars.mds.yandex.net/get-pdb/1004345/f795977b-4fde-4176-a87f-4f0acba543e8/s1200?webp=false',
       name: 'Sasha',
       message: 'Hello, i`m Sasha',
@@ -27,7 +27,7 @@ let initialize = {
     },
     {
       id: 2,
-      followed: 'follow',
+      followed: true,
       photo: 'https://avatars.mds.yandex.net/get-pdb/1004345/f795977b-4fde-4176-a87f-4f0acba543e8/s1200?webp=false',
       name: 'Andrew',
       message: 'Hello, i`m Andrew',
@@ -44,23 +44,26 @@ const usersPageReducer = (usersPageState = initialize, action) => {
     case FOLLOW: {
       return {
         ...usersPageState,
-        users: [usersPageState.users.map(u => {
+        users: usersPageState.users.map(u => {
+          // Если id совпадает, то
           if (u.id === action.userId) {
-            u.followed = 'unfollow';
-            return usersPageState;
-          }
-        })]
-      }
+            // копируем юзера и изменяем его followed
+            return {...u, followed: false};
+          } else
+            // иначе возвращаем некопированный и не измененный юзер
+            return u;
+        })
+      };
     }
     case UNFOLLOW: {
       return {
         ...usersPageState,
-        users: [usersPageState.users.map(u => {
+        users: usersPageState.users.map(u => {
           if (u.id === action.userId) {
-            u.followed = 'follow';
-            return usersPageState;
-          }
-        })]
+            return {...u, followed: true};
+          } else
+            return u;
+        })
       }
     }
     default:

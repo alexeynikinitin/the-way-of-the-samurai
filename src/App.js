@@ -8,10 +8,10 @@ import {BrowserRouter, Route} from "react-router-dom";
 import News from "./components/Content/News/News";
 import Photo from "./components/Content/Photo/Photo";
 import Settings from "./components/Content/Settings/Settings";
-import FindUsersContainer from "./components/Content/Users/FindUsersContainer";
+import UsersContainer from "./components/Content/Users/UsersContainer";
 
 
-function App(props) {
+function App() {
   return (
     <BrowserRouter>
       <div className="app">
@@ -55,7 +55,7 @@ function App(props) {
           <Route
             path='/users'
             render={() =>
-              <FindUsersContainer/>
+              <UsersContainer/>
             }/>
         </div>
       </div>
