@@ -1,43 +1,10 @@
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
+const SET_USERS = "SET_USERS";
 
 let initialize = {
-  users: [
-    {
-      id: 0,
-      followed: true,
-      photo: 'https://avatars.mds.yandex.net/get-pdb/1004345/f795977b-4fde-4176-a87f-4f0acba543e8/s1200?webp=false',
-      name: 'Dmitry',
-      message: 'Hello, i`m Dmitry',
-      location: {
-        country: 'Belarus',
-        city: 'Minsk'
-      }
-    },
-    {
-      id: 1,
-      followed: false,
-      photo: 'https://avatars.mds.yandex.net/get-pdb/1004345/f795977b-4fde-4176-a87f-4f0acba543e8/s1200?webp=false',
-      name: 'Sasha',
-      message: 'Hello, i`m Sasha',
-      location: {
-        country: 'Russia',
-        city: 'Moscow'
-      }
-    },
-    {
-      id: 2,
-      followed: true,
-      photo: 'https://avatars.mds.yandex.net/get-pdb/1004345/f795977b-4fde-4176-a87f-4f0acba543e8/s1200?webp=false',
-      name: 'Andrew',
-      message: 'Hello, i`m Andrew',
-      location: {
-        country: 'Ukraine',
-        city: 'Kiev'
-      }
-    },
-  ]
-}
+  users: []
+};
 
 const usersPageReducer = (usersPageState = initialize, action) => {
   switch (action.type) {
@@ -66,6 +33,12 @@ const usersPageReducer = (usersPageState = initialize, action) => {
         })
       }
     }
+    case SET_USERS: {
+      return {
+        ...usersPageState,
+        users: action.response
+      }
+    }
     default:
       return usersPageState;
   }
@@ -73,5 +46,6 @@ const usersPageReducer = (usersPageState = initialize, action) => {
 
 export const followAC = (userId) => ({type: FOLLOW, userId: userId});
 export const unfollowAC = (userId) => ({type: UNFOLLOW, userId: userId});
+export const setUsersAC = (response) => ({type: SET_USERS, response: response});
 
 export default usersPageReducer;
