@@ -29,7 +29,7 @@ class ProfileContainerAPI extends React.Component {
 
 let mapStoreToProps = (state) => {
   return {
-    profileInfo: state.profilePage.profileInfo,
+    profileInfo: state.profilePage.profileInfo
   }
 }
 let withRouterProfileContainer = withRouter(ProfileContainerAPI)

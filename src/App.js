@@ -10,13 +10,14 @@ import Photo from "./components/Content/Photo/Photo";
 import Settings from "./components/Content/Settings/Settings";
 import UsersContainer from "./components/Content/Users/UsersContainer";
 import ProfileContainer from "./components/Content/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        <Header/>
+        <HeaderContainer />
         <NavBar/>
         <div className="app_content">
 
