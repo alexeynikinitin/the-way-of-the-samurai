@@ -1,15 +1,16 @@
 import React from "react";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 
 let Profile = (props) => {
   return (
     <div className="classes.profile">
-       {/*<ProfileInfo />   */}
+      <ProfileInfo profileInfo = {props.profileInfo}/>
       <MyPostsContainer />
     </div>
   );
 
 };
 
-export default Profile
+export default Profile;

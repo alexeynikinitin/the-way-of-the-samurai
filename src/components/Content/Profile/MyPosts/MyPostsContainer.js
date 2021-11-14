@@ -1,5 +1,8 @@
 import React from "react";
-import {newPostActionCreator, updateTextAreaPostActionCreator} from "../../../../redux/profilePageReducer";
+import {
+  newPost,
+  updateTextAreaPost,
+} from "../../../../redux/profilePageReducer";
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
 
@@ -9,13 +12,13 @@ let mapStoreToProps = (state) => {
     changeTextAreaPost: state.profilePage.changeTextAreaPost
   }
 }
-let mapDispatchToProps = (dispatch) => {
-  return {
-    addText: () => dispatch(newPostActionCreator()),
-    updateTextArea: (message) => dispatch(updateTextAreaPostActionCreator(message))
-  }
-}
+// let mapDispatchToProps = (dispatch) => {
+//   return {
+//     addText: () => dispatch(newPostActionCreator()),
+//     updateTextArea: (message) => dispatch(updateTextAreaPostActionCreator(message))
+//   }
+// }
 
-let MyPostsContainer = connect(mapStoreToProps, mapDispatchToProps)(MyPosts);
+let MyPostsContainer = connect(mapStoreToProps, {newPost, updateTextAreaPost})(MyPosts);
 
 export default MyPostsContainer;

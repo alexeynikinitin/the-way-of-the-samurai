@@ -1,16 +1,17 @@
 import React from "react";
 import Post from "./Post/Post";
 import classes from "./MyPosts.module.scss"
+import {newPost, updateTextAreaPost} from "../../../../redux/profilePageReducer";
 
 let MyPosts = (props) => {
 
   let addTextPost = () => {
-    props.addText();
+    props.newPost();
   }
 
   let updateTextAreaPost = (e) => {
     let message = e.target.value;
-    props.updateTextArea(message);
+    props.updateTextAreaPost(message);
   }
 
   return (

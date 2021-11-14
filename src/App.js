@@ -9,6 +9,7 @@ import News from "./components/Content/News/News";
 import Photo from "./components/Content/Photo/Photo";
 import Settings from "./components/Content/Settings/Settings";
 import UsersContainer from "./components/Content/Users/UsersContainer";
+import ProfileContainer from "./components/Content/Profile/ProfileContainer";
 
 
 function App() {
@@ -21,16 +22,16 @@ function App() {
 
           {/* ===== Profile Page ===== */}
           <Route
-            path='/profile'
+            path='/profile/:userId?'
             render={() =>
-              <Profile/>
+              <ProfileContainer />
             }/>
 
           {/* ===== Messages Page ===== */}
           <Route
             path='/messages'
             render={() =>
-              <MessagesContainer/>
+              <MessagesContainer />
             }/>
 
           {/* ===== Photo Page ===== */}
@@ -55,7 +56,7 @@ function App() {
           <Route
             path='/users'
             render={() =>
-              <UsersContainer/>
+              <UsersContainer />
             }/>
         </div>
       </div>

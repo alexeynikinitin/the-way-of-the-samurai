@@ -1,5 +1,7 @@
 const NEW_POST = "NEW-POST";
 const UPDATE_TEXT_AREA_POST = "UPDATE-TEXT-AREA-POST";
+const SET_PROFILE_INFO = "SET_PROFILE_INFO";
+const SET_PROFILE_INFO_BY_ID = "SET_PROFILE_INFO_BY_ID";
 
 let initialize = {
   posts: [
@@ -7,7 +9,8 @@ let initialize = {
     {id: 1, message: "Hello", like: "20"},
     {id: 2, message: "Hello", like: "30"},
   ],
-  changeTextAreaPost: ''
+  changeTextAreaPost: '',
+  profileInfo: null,
 }
 
 const profilePageReducer = (profilePageState = initialize, action) => {
@@ -30,12 +33,19 @@ const profilePageReducer = (profilePageState = initialize, action) => {
         changeTextAreaPost: action.message
       };
     }
+    case SET_PROFILE_INFO: {
+      return {
+        ...profilePageState,
+        profileInfo: action.response
+      }
+    }
     default:
       return profilePageState;
   }
 }
 
-export const newPostActionCreator = () => ({type: NEW_POST});
-export const updateTextAreaPostActionCreator = (message) => ({type: UPDATE_TEXT_AREA_POST, message: message});
+export const newPost = () => ({type: NEW_POST});
+export const updateTextAreaPost = (message) => ({type: UPDATE_TEXT_AREA_POST, message: message});
+export const setProfileInfo = (response) => ({type: SET_PROFILE_INFO, response: response});
 
 export default profilePageReducer;
